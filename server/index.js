@@ -1,26 +1,29 @@
+//서버 중심파일(FU)
 const express = require("express");
-const dotenv = require("dotenv");
+const dotenv = require("dotenv");  //몽고디비 아이디,비번 보안(FU) .gitignore
 dotenv.config();
 const app = express();
-const port = 5000;
+const port = 3010; //기존5000번 포트 -> 3010로 수정(FU) / backend port
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
 const { User } = require("./models/User");
 const { auth } = require("./middleware/auth");
 
+// URL을 통해 전달되는 데이터에 한글, 공백 등과 같은 문자가 포함될 경우 제대로 인식되지 않는 문제 해결
 app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(bodyParser.json());
 app.use(cookieParser());
 
 mongoose
-  .connect(process.env.DB_URI, {
-    useNewUrlParser: true,
-  })
-  .then(() => console.log("mongoDB 연결!"))
+.connect(`mongodb+srv://${process.env.dbusername}:${process.env.dbpassword}@fu.jfjaess.mongodb.net/Fu`, {
+  useNewUrlParser: true,
+})
+  .then(() => console.log('Connected to MongoDB')) //문구 수정(FU)
   .catch((err) => console.log(err));
 
-app.get("/", (req, res) => res.send("hello worldddddddddddddddd"));
+app.get("/", (req, res) => res.send("여기는 루트입니다.")); //문구 수정(FU)
 
 app.get("/api/hello", (req, res) => {
   res.send("hello");
@@ -66,12 +69,12 @@ app.post("/api/users/login", (req, res) => {
     // 여기까지 미들웨어를 통과해 왔다는 얘기는 auth이 true 라는 말
     res.status(200).json({
       _id: req.user._id,
-      isTeacher: req.user.직책 === "학생" ? false : true,
+      isTeacher: req.user.직책 === "학생" ? false : true, //직책기능 구현x 수정 필요(fu)
       isAuth: true,
       이름: req.user.이름,
-      학번: req.user.학번,
+      학번: req.user.학번,  //버려야함(fu)
       이메일: req.user.이메일,
-      직책: req.user.직책,
+      직책: req.user.직책, //버려야함(fu)
     });
   });
 });

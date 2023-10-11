@@ -1,3 +1,4 @@
+//프론트 앤드 (fu)
 import React from "react";
 import { useHistory, withRouter } from "react-router-dom";
 import { useState } from "react";
@@ -100,7 +101,8 @@ function RegisterPage() {
         <input value={stuNum} onChange={stdNumEvent}></input>
         <label>이메일</label>
         <input type="email" value={email} onChange={emailEvent}></input>
-        <label>직책</label>
+        {/* 기능구현x(fu) */}
+        <label>직책</label> 
         <select onChange={roleEvent} value={role}>
           <option>선택</option>
           <option>선생님</option>

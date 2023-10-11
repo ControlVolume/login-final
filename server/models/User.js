@@ -2,12 +2,12 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const jwt = require("jsonwebtoken");
-const userSchema = mongoose.Schema({
+const userSchema = mongoose.Schema({ //프론트와 협의해서 영어표기할 필요 잇음
   이름: {
     type: String,
     maxlength: 50,
   },
-  학번: {
+  학번: {// 프로젝트 반영x (없애야함)
     type: Number,
     maxlength: 20,
   },
@@ -26,7 +26,7 @@ const userSchema = mongoose.Schema({
     minlength: 6,
   },
   직책: {
-    type: String,
+    type: String, // 프로젝트 반영x (없애야함)
   },
   token: {
     type: String,
