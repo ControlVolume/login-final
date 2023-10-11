@@ -51,3 +51,7 @@ db에 직책이 '선생님'인 데이터가 있는데 이 계정으로 로그인
 https://velog.io/@boyfromthewell/%EA%B0%84%EB%8B%A8%ED%95%9C-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85-%ED%8E%98%EC%9D%B4%EC%A7%80-%EA%B5%AC%ED%98%84
 
 작성하신 glow_soon (나는야 코린이)님것을 가져와 연습했음을 알려드립니다.
+
+프로젝트 연습 후 git허브에서 해당 코드를 내리겠습니다 
+저작권같은 문제는 입문해서 배우고 잇어서 잘모르니까 문제가 있다면
+onigiri282@gmail.com 로 메일 남겨주시면 git허브에서 바로 삭제조치 취하겠습니다.
